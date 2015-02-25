@@ -1,0 +1,16 @@
+<h1>Manager</h1>
+<table>
+  <tr>
+    <th>Device</th>
+    <th>Room</th>
+    <th>User</th>
+  </tr>
+
+<% @devicesLocations.each do |dl| %>
+  <tr>
+    <td><%= dl.device.name %></td>
+    <td><%= dl.room %></td>
+    <td><%= dl.user.email %></td>
+  </tr>
+<% end %>
+</table>
