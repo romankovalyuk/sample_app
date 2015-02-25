@@ -1,0 +1,7 @@
+<% provide(:title, 'Home') %>
+
+<div class="text-center">
+	<h3>Welcome!</h3>
+	<%=link_to "Sign up now!", 'users/new', class: "btn btn-large btn-primary" %>
+</div>
+
