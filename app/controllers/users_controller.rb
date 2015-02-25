@@ -16,9 +16,9 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
        flash[:success] = "Welcome to the TDS!"
-      redirect_to 'devices/index'
+      redirect_to signin_path
 		else
-		  render 'user/new'
+		  render 'new'
 		end
 	end
 
