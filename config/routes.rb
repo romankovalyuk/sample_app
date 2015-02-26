@@ -3,6 +3,7 @@ SampleApp::Application.routes.draw do
   resources :users
   resources :devices
   resources :managers
+  resources :managers
   resources :sessions, only: [:new, :create, :destroy]
   root 'home#index'
   match '/contact', to: 'home#contact', via: 'get'
