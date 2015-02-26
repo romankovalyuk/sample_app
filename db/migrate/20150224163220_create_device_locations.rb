@@ -1,14 +1,11 @@
 class CreateDeviceLocations < ActiveRecord::Migration
   def change
     create_table :device_locations do |t|
-      t.string :deviceId
-      t.string :integer
-      t.string :UserId
-      t.string :integer
-      t.string :roomName
-      t.string :string
-
+      t.integer :device_id
+      t.integer :user_id
+      t.string :room
       t.timestamps
     end
+     add_index :device_locations, [:user_id, :device_id, :created_at]
   end
 end

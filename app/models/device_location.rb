@@ -2,5 +2,7 @@ class DeviceLocation < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :device
 
-	 validates :roomName, length: { maximum: 1 }
+	validates :user_id, presence: true
+	validates :device_id, presence: true
+	validates :room, presence: true	
 end

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: [:destroy]
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 15)
+    @users = User.paginate(page: params[:page], per_page: 10)
   end
 
  	def show
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     end
 
     def admin_user
-      flash[:notice] = "You don't have permissions."  
+      flash[:notice] = "You don't have permissions."
       redirect_to(root_url) unless current_user.admin?
     end
 end

@@ -1,0 +1,16 @@
+<% provide(:title, 'Device') %>
+<h1>Device</h1>
+
+<div class="row">
+  <div class="span4 offset4 ">
+    <%= form_for(@device) do |d| %>
+      <%= d.label :name %>
+      <%= d.text_field :name %>
+
+      <%= d.label :description %>
+      <%= d.text_field :description %>
+
+      <%= d.submit "Create device", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

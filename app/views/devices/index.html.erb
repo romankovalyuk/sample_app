@@ -4,16 +4,22 @@
     <div class="alert alert-<%= key %>"><%= value %></div>
 <% end %>
 
+<%= link_to 'Add New', new_device_path %>
+
 <table>
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th></th>
   </tr>
 
 <% @devices.each do |d| %>
   <tr>
     <td><%= d.name %></td>
     <td><%= d.description %></td>
+    <td><%= link_to 'Edit', edit_device_path(d) %></td>
   </tr>
 <% end %>
 </table>
+
+<%= will_paginate %>

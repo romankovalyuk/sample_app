@@ -14,14 +14,14 @@
 ActiveRecord::Schema.define(version: 20150226092822) do
 
   create_table "device_locations", force: true do |t|
-    t.string   "deviceId"
-    t.string   "integer"
-    t.string   "UserId"
-    t.string   "roomName"
-    t.string   "string"
+    t.integer  "device_id"
+    t.integer  "user_id"
+    t.string   "room"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "device_locations", ["user_id", "device_id", "created_at"], name: "index_device_locations_on_user_id_and_device_id_and_created_at"
 
   create_table "devices", force: true do |t|
     t.string   "name"

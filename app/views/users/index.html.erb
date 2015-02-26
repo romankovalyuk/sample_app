@@ -12,10 +12,8 @@
   <tr>
     <td><%= u.name %></td>
     <td><%= u.email %></td>
-    <td><%= link_to 'Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+    <% if current_user.admin? || !current_user?(u) %>
+      <td><%= link_to 'Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
   </tr>
 <% end %>
